@@ -5,5 +5,7 @@ data class Comercio(
     val nombre: String,
     val telf: String,
     val direccion: String,
+    val link_logo: String,
+
     val id_adm_comercio: Long
 )

@@ -4,6 +4,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activities.MenuPrincipalActivity">
+    tools:context=".ui.activities.MenuPrincipalActivity"
+    android:background="@color/green_4">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/fragment_toolbar" />
+
+    <LinearLayout
+        android:id="@+id/ll_buscar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/include">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_username"
+
+            android:layout_width="290dp"
+            android:layout_height="@dimen/_32sdp"
+
+            android:layout_gravity="center"
+
+            android:padding="@dimen/_8sdp"
+
+            android:background="@color/green_3"
+
+            android:hint="Buscar comercios"
+
+            android:imeOptions="actionSearch"
+            android:inputType="text" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_buscar"
+
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="center"
+
+            android:backgroundTint="@color/green_2"
+            android:text="Buscar"
+
+            android:textColor="@color/white"
+            android:textSize="@dimen/_7sdp"
+
+            />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_comercios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="@dimen/_8sdp"
+
+        android:scrollbars="none"
+
+        app:layout_constraintTop_toBottomOf="@+id/ll_buscar"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

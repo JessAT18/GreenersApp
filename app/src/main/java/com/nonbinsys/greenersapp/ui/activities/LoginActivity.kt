@@ -24,7 +24,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun onIniciarSesionClick(view: View) {
-        //val intent = Intent(this, LoginActivity::class.java)
+        val intent = Intent(this, MenuPrincipalActivity::class.java)
         startActivity(intent)
     }
 }

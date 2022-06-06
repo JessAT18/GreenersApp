@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:elevation="@dimen/_5sdp"
+    app:cardBackgroundColor="@color/green_4"
+    >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_8sdp"
+        >
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_comercio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:cardCornerRadius="@dimen/_5sdp">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/img_comercio"
+                android:layout_width="@dimen/_60sdp"
+                android:layout_height="@dimen/_60sdp"
+                android:scaleType="fitCenter"
+                android:src="@color/green_1"/>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_nombre_comercio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="@dimen/_8sdp"
+
+            android:text="Nombre Comercio"
+            android:textSize="@dimen/_16ssp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+
+            app:layout_constraintTop_toTopOf="@id/cv_comercio"
+            app:layout_constraintStart_toEndOf="@+id/cv_comercio"
+            />
+
+        <TextView
+            android:id="@+id/tv_direccion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Direccion"
+            android:textSize="@dimen/_12sdp"
+
+
+            android:layout_marginStart="@dimen/_8sdp"
+            app:layout_constraintTop_toBottomOf="@id/tv_nombre_comercio"
+            app:layout_constraintStart_toEndOf="@+id/cv_comercio"/>
+
+        <TextView
+            android:id="@+id/tv_telefono"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Telefono"
+            android:textSize="@dimen/_10sdp"
+
+
+            android:layout_marginStart="@dimen/_8sdp"
+            app:layout_constraintTop_toBottomOf="@id/tv_direccion"
+            app:layout_constraintStart_toEndOf="@+id/cv_comercio"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
