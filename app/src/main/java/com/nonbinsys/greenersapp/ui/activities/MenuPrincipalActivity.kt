@@ -19,6 +19,10 @@ class MenuPrincipalActivity : AppCompatActivity() {
 
     companion object{
         const val COMERCIO_ID = "com.nonbinsys.greenersapp.ui.activities.comercioId"
+        const val COMERCIO_NOMBRE = "com.nonbinsys.greenersapp.ui.activities.comercioNombre"
+        const val COMERCIO_DIRECCION = "com.nonbinsys.greenersapp.ui.activities.comercioDireccion"
+        const val COMERCIO_TELEFONO = "com.nonbinsys.greenersapp.ui.activities.comercioTelefono"
+        const val COMERCIO_LINK_LOGO = "com.nonbinsys.greenersapp.ui.activities.comercioLinkLogo"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,7 +58,11 @@ class MenuPrincipalActivity : AppCompatActivity() {
     private fun onComercioClick() {
         comerciosAdapter.onItemClick = { comercio ->
             val intent = Intent(this, ComercioActivity::class.java)
-            intent.putExtra(COMERCIO_ID, comercio.id)
+            intent.putExtra(COMERCIO_ID, comercio.id.toString())
+            intent.putExtra(COMERCIO_NOMBRE, comercio.nombre)
+            intent.putExtra(COMERCIO_DIRECCION, comercio.direccion)
+            intent.putExtra(COMERCIO_TELEFONO, comercio.telf)
+            intent.putExtra(COMERCIO_LINK_LOGO, comercio.link_logo)
             startActivity(intent)
         }
     }
