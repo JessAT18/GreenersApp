@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.LoginActivity"
+    android:background="@color/green_1">
+
+
+    <TextView
+        android:id="@+id/tv_Logo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GREENERS"
+
+        android:textColor="@color/green_4"
+        android:textSize="@dimen/_50sdp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:layout_marginTop="@dimen/_24sdp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/et_username"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    <EditText
+        android:id="@+id/et_username"
+        android:layout_width="@dimen/_296sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:inputType="number"
+        android:hint="Usuario"
+        android:layout_marginTop="24dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:paddingStart="16dp"
+        android:textSize="@dimen/_16sdp"
+        android:background="@color/green_4"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <EditText
+        android:id="@+id/et_contrasena"
+        android:layout_width="@dimen/_296sdp"
+        android:layout_height="@dimen/_40sdp"
+        android:ems="10"
+        android:inputType="numberPassword"
+        android:hint="Contraseña"
+        android:paddingStart="16dp"
+        android:textColorHint="@color/black"
+        android:textSize="@dimen/_16sdp"
+        android:layout_marginTop="24dp"
+        android:textColor="@color/black"
+        android:background="@color/green_4"
+        app:layout_constraintTop_toBottomOf="@id/et_username"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="@dimen/_296sdp"
+        android:layout_height="@dimen/_56sdp"
+        android:text="Iniciar Sesión"
+        android:layout_marginTop="24dp"
+        app:cornerRadius="@dimen/_10sdp"
+        android:backgroundTint="@color/green_2"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/et_contrasena"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        android:onClick="onIniciarSesionClick"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
