@@ -44,8 +44,12 @@ class MenuPrincipalViewModel: ViewModel() {
                 response: Response<RequestResponse<ComercioList>>
             ) {
                 response.body()?._embedded?.comercioList?.let {comercioList ->
+                    if (comercioList.isEmpty())
+                        getComercios()
+                    else
                     comerciosLiveData.postValue(comercioList)
                 }
+                // TODO: CONTROLAR SI LA LISTA VIENE VACIA
             }
 
             override fun onFailure(call: Call<RequestResponse<ComercioList>>, t: Throwable) {

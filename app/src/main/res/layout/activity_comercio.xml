@@ -33,7 +33,8 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="@dimen/_16sdp">
+            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginHorizontal="@dimen/_8sdp">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_comercio"

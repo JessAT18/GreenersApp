@@ -54,8 +54,8 @@ class ComercioActivity : AppCompatActivity() {
             .into(binding.imgComercio)
 
         binding.tvNombreComercio.text = comercioNombre
-        binding.tvDireccion.text = comercioDireccion
-        binding.tvTelefono.text = comercioTelf
+        binding.tvDireccion.text = "Dirección: " + comercioDireccion
+        binding.tvTelefono.text = "Teléfono: " + comercioTelf
 
     }
 //

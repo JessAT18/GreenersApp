@@ -9,7 +9,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/_8sdp"
+        android:layout_marginTop="@dimen/_6sdp"
         >
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_comercio"
