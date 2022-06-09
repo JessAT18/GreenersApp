@@ -7,7 +7,7 @@ object RetrofitInstance {
     val api:GreenersApi by lazy{
         //Para hacer funcionar la API, la ip debe ser la de la computadora(IPv4)
         Retrofit.Builder()
-            .baseUrl("http://192.168.43.148:9000/api/")
+            .baseUrl("http://192.168.0.2:9000/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(GreenersApi::class.java)

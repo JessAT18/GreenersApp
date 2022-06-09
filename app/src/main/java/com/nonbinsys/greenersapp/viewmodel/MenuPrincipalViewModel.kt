@@ -37,6 +37,25 @@ class MenuPrincipalViewModel: ViewModel() {
         })
     }
 
+    fun encontrarComerciosporNombre(nombreComercio: String){
+        RetrofitInstance.api.encontrarComerciosporNombre(nombreComercio).enqueue(object: Callback<RequestResponse<ComercioList>> {
+            override fun onResponse(
+                call: Call<RequestResponse<ComercioList>>,
+                response: Response<RequestResponse<ComercioList>>
+            ) {
+                response.body()?._embedded?.comercioList?.let {comercioList ->
+                    comerciosLiveData.postValue(comercioList)
+                }
+            }
+
+            override fun onFailure(call: Call<RequestResponse<ComercioList>>, t: Throwable) {
+                Log.d("MenuPrincipalErr", t.toString())
+            }
+
+        })
+
+    }
+
     fun observeComerciosLiveData(): LiveData<List<Comercio>> {
         return comerciosLiveData
     }

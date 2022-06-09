@@ -3,6 +3,7 @@ package com.nonbinsys.greenersapp.ui.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
@@ -39,6 +40,25 @@ class MenuPrincipalActivity : AppCompatActivity() {
         observerComerciosLiveData()
 
         onComercioClick()
+
+        onSVNombreComercio()
+    }
+
+    private fun onSVNombreComercio() {
+        binding.svNombreComercio.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                binding.svNombreComercio.clearFocus()
+                query?.let {
+                    viewModel.encontrarComerciosporNombre(query)
+                }
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                return false
+            }
+
+        })
     }
 
     private fun prepararComerciosRecyclerView() {
@@ -58,7 +78,8 @@ class MenuPrincipalActivity : AppCompatActivity() {
     private fun onComercioClick() {
         comerciosAdapter.onItemClick = { comercio ->
             val intent = Intent(this, ComercioActivity::class.java)
-            intent.putExtra(COMERCIO_ID, comercio.id.toString())
+            intent.putExtra(COMERCIO_ID, comercio.id.toString()
+            )
             intent.putExtra(COMERCIO_NOMBRE, comercio.nombre)
             intent.putExtra(COMERCIO_DIRECCION, comercio.direccion)
             intent.putExtra(COMERCIO_TELEFONO, comercio.telf)

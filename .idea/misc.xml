@@ -3,10 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/JESSICA/AndroidStudioProjects/GreenersApp/app/src/main/res/drawable/searchview_background.xml" value="0.264" />
         <entry key="..\:/Users/JESSICA/AndroidStudioProjects/GreenersApp/app/src/main/res/layout/activity_comercio.xml" value="0.32277834525025534" />
         <entry key="..\:/Users/JESSICA/AndroidStudioProjects/GreenersApp/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/JESSICA/AndroidStudioProjects/GreenersApp/app/src/main/res/layout/activity_main.xml" value="0.32916666666666666" />
-        <entry key="..\:/Users/JESSICA/AndroidStudioProjects/GreenersApp/app/src/main/res/layout/activity_menu_principal.xml" value="0.3472222222222222" />
+        <entry key="..\:/Users/JESSICA/AndroidStudioProjects/GreenersApp/app/src/main/res/layout/activity_menu_principal.xml" value="0.536" />
         <entry key="..\:/Users/JESSICA/AndroidStudioProjects/GreenersApp/app/src/main/res/layout/comercio_item.xml" value="0.2012288786482335" />
         <entry key="..\:/Users/JESSICA/AndroidStudioProjects/GreenersApp/app/src/main/res/layout/fragment_nav_drawer.xml" value="0.1933876811594203" />
         <entry key="..\:/Users/JESSICA/AndroidStudioProjects/GreenersApp/app/src/main/res/layout/fragment_toolbar.xml" value="0.2" />

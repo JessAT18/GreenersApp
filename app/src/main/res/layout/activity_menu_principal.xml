@@ -11,47 +11,22 @@
         android:id="@+id/include"
         layout="@layout/fragment_toolbar" />
 
-    <LinearLayout
-        android:id="@+id/ll_buscar"
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/svNombreComercio"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_8sdp"
-        android:layout_marginHorizontal="@dimen/_8sdp"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/include">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/et_username"
+        app:iconifiedByDefault="false"
+        app:queryHint="Buscar comercios"
+        app:queryBackground="@android:color/transparent"
 
-            android:layout_width="290dp"
-            android:layout_height="wrap_content"
+        android:background="@drawable/searchview_background"
 
-            android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_12sdp"
 
-            android:padding="@dimen/_8sdp"
-
-            android:background="@color/green_3"
-
-            android:hint="Buscar comercios"
-
-            android:imeOptions="actionSearch"
-            android:inputType="text" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_buscar"
-
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_45sdp"
-            android:layout_gravity="center"
-
-            android:backgroundTint="@color/green_2"
-            android:text="Buscar"
-
-            android:textColor="@color/white"
-            android:textSize="@dimen/_7sdp"
-
-            />
-    </LinearLayout>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_comercios"
@@ -62,7 +37,7 @@
 
         android:scrollbars="vertical"
 
-        app:layout_constraintTop_toBottomOf="@+id/ll_buscar"
+        app:layout_constraintTop_toBottomOf="@+id/svNombreComercio"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
