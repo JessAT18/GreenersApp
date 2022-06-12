@@ -68,7 +68,7 @@
 
             android:textSize="@dimen/_16sdp"
 
-            android:background="@color/green_4" />
+            android:background="@drawable/border_stroke_green_background" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -95,7 +95,7 @@
 
             android:textSize="@dimen/_16sdp"
 
-            android:background="@color/green_4"
+            android:background="@drawable/border_stroke_green_background"
 
             />
     </com.google.android.material.textfield.TextInputLayout>

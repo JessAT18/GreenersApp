@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.activities.ComercioActivity">
+    tools:context=".comercio.ComercioActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/ab_main"

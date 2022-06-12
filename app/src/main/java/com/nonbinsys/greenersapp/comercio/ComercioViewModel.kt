@@ -1,4 +1,4 @@
-package com.nonbinsys.greenersapp.viewmodel
+package com.nonbinsys.greenersapp.comercio
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

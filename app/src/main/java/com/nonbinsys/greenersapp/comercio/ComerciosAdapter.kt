@@ -1,10 +1,9 @@
-package com.nonbinsys.greenersapp.adapters
+package com.nonbinsys.greenersapp.comercio
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.nonbinsys.greenersapp.data.pojo.Comercio
 import com.nonbinsys.greenersapp.databinding.ComercioItemBinding
 
 class ComerciosAdapter: RecyclerView.Adapter<ComerciosAdapter.ComercioViewHolder>() {

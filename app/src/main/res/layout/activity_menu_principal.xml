@@ -39,6 +39,8 @@
 
         android:scrollbars="vertical"
 
+        android:background="@drawable/border_stroke_corner_background"
+
         app:layout_constraintTop_toBottomOf="@+id/svNombreComercio"
         />
 

@@ -1,4 +1,4 @@
-package com.nonbinsys.greenersapp.data.pojo
+package com.nonbinsys.greenersapp.comercio
 
 data class Comercio(
     val id: Long,

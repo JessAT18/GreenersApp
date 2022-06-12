@@ -4,8 +4,8 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.nonbinsys.greenersapp.data.pojo.Comercio
-import com.nonbinsys.greenersapp.data.pojo.ComercioList
+import com.nonbinsys.greenersapp.comercio.Comercio
+import com.nonbinsys.greenersapp.comercio.ComercioList
 import com.nonbinsys.greenersapp.data.retrofit.RetrofitInstance
 import com.nonbinsys.greenersapp.utils.RequestResponse
 import retrofit2.Call

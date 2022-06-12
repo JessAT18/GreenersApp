@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import com.nonbinsys.greenersapp.databinding.ActivityMainBinding
+import com.nonbinsys.greenersapp.ui.fragments.Toolbar
 import com.nonbinsys.greenersapp.viewmodel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
@@ -14,14 +15,12 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         //Configurations
-        supportActionBar?.hide()
 
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
         viewModel = ViewModelProvider(this)[MainViewModel::class.java]
-
     }
 
     fun onIniciarSesionClick(view: View) {

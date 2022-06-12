@@ -7,9 +7,9 @@ import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import com.nonbinsys.greenersapp.adapters.ComerciosAdapter
+import com.nonbinsys.greenersapp.comercio.ComercioActivity
+import com.nonbinsys.greenersapp.comercio.ComerciosAdapter
 import com.nonbinsys.greenersapp.databinding.ActivityMenuPrincipalBinding
-import com.nonbinsys.greenersapp.ui.fragments.Toolbar
 import com.nonbinsys.greenersapp.viewmodel.MenuPrincipalViewModel
 
 class MenuPrincipalActivity : AppCompatActivity() {

@@ -1,14 +1,11 @@
-package com.nonbinsys.greenersapp.ui.activities
+package com.nonbinsys.greenersapp.comercio
 
-import android.app.Activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.Glide
-import com.nonbinsys.greenersapp.R
 import com.nonbinsys.greenersapp.adapters.PaquetesAdapter
-import com.nonbinsys.greenersapp.data.pojo.Comercio
 import com.nonbinsys.greenersapp.databinding.ActivityComercioBinding
-import com.nonbinsys.greenersapp.viewmodel.ComercioViewModel
+import com.nonbinsys.greenersapp.ui.activities.MenuPrincipalActivity
 
 class ComercioActivity : AppCompatActivity() {
     /**DATOS DEL COMERCIO*/
