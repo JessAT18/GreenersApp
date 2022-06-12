@@ -17,6 +17,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".paquete.PaqueteActivity"
+            android:exported="false" />
+        <activity
             android:name=".comercio.ComercioActivity"
             android:exported="false" />
         <activity
@@ -24,7 +27,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.activities.LoginActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".ui.activities.MainActivity"
             android:exported="true">

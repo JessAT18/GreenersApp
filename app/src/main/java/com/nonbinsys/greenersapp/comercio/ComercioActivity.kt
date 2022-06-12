@@ -1,15 +1,20 @@
 package com.nonbinsys.greenersapp.comercio
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
 import com.bumptech.glide.Glide
-import com.nonbinsys.greenersapp.adapters.PaquetesAdapter
+import com.nonbinsys.greenersapp.paquete.PaquetesAdapter
 import com.nonbinsys.greenersapp.databinding.ActivityComercioBinding
+import com.nonbinsys.greenersapp.paquete.PaqueteActivity
 import com.nonbinsys.greenersapp.ui.activities.MenuPrincipalActivity
 
 class ComercioActivity : AppCompatActivity() {
     /**DATOS DEL COMERCIO*/
-    private lateinit var comercioId: String
+    private var comercioId: Long = 0
     private lateinit var comercioNombre: String
     private lateinit var comercioDireccion: String
     private lateinit var comercioTelf: String
@@ -20,19 +25,47 @@ class ComercioActivity : AppCompatActivity() {
     lateinit var paquetesAdapter: PaquetesAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        supportActionBar?.hide()
+
         super.onCreate(savedInstanceState)
         binding = ActivityComercioBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        comercioViewModel = ViewModelProvider(this)[ComercioViewModel::class.java]
 
         getComercioInformationFromIntent()
-
         setInformationComercio()
-//        prepararPaquetesRecyclerView()
+
+        prepararPaquetesRecyclerView()
+        comercioViewModel.encontrarPaquetesPorComercio(comercioId)
+        observerPaquetesLiveData()
+        
+        onPaqueteClick()
+    }
+
+    private fun onPaqueteClick() {
+        paquetesAdapter.onItemClick = { paquete ->
+            val intent = Intent(this, PaqueteActivity::class.java)
+            //PUT EXTRA
+            startActivity(intent)
+        }
+    }
+
+    private fun observerPaquetesLiveData() {
+        comercioViewModel.observePaquetesLiveData().observe(this, Observer { paquetes ->
+            paquetesAdapter.setPaquetesList(paquetes)
+        })
+    }
+
+    private fun prepararPaquetesRecyclerView() {
+        paquetesAdapter = PaquetesAdapter()
+        binding.rvPaquetes.apply {
+            layoutManager = GridLayoutManager(context, 1, GridLayoutManager.VERTICAL, false)
+            adapter = paquetesAdapter
+        }
     }
 
     private fun getComercioInformationFromIntent() {
-        comercioId = intent.getStringExtra(MenuPrincipalActivity.COMERCIO_ID)!!
+        comercioId = intent.getLongExtra(MenuPrincipalActivity.COMERCIO_ID, 0)!!
         comercioNombre = intent.getStringExtra(MenuPrincipalActivity.COMERCIO_NOMBRE)!!
         comercioDireccion = intent.getStringExtra(MenuPrincipalActivity.COMERCIO_DIRECCION)!!
         comercioTelf = intent.getStringExtra(MenuPrincipalActivity.COMERCIO_TELEFONO)!!
@@ -40,10 +73,6 @@ class ComercioActivity : AppCompatActivity() {
     }
 
     private fun setInformationComercio() {
-        //Toolbar
-
-        binding.ctbMain.title = comercioNombre
-
         //Detalles del comercio
 
         Glide.with(applicationContext)
@@ -55,10 +84,5 @@ class ComercioActivity : AppCompatActivity() {
         binding.tvTelefono.text = "Teléfono: " + comercioTelf
 
     }
-//
-//    private fun prepararPaquetesRecyclerView() {
-//        return 0
-//    }
-
 
 }

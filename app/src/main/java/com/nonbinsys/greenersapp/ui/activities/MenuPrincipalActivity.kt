@@ -48,13 +48,18 @@ class MenuPrincipalActivity : AppCompatActivity() {
         binding.svNombreComercio.setOnQueryTextListener(object: SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
                 binding.svNombreComercio.clearFocus()
-                query?.let {
+                if(query.isNullOrBlank())
+                {
+                    viewModel.getComercios()
+                }
+                else {
                     viewModel.encontrarComerciosporNombre(query)
                 }
                 return false
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
+                viewModel.getComercios()
                 return false
             }
 
@@ -72,14 +77,14 @@ class MenuPrincipalActivity : AppCompatActivity() {
     private fun observerComerciosLiveData() {
         viewModel.observeComerciosLiveData().observe(this, Observer { comercios ->
             comerciosAdapter.setComerciosList(comercios)
+            binding.tvCantidadComercios.text = "Cantidad de comercios: " + comercios.count().toString()
         })
     }
 
     private fun onComercioClick() {
         comerciosAdapter.onItemClick = { comercio ->
             val intent = Intent(this, ComercioActivity::class.java)
-            intent.putExtra(COMERCIO_ID, comercio.id.toString()
-            )
+            intent.putExtra(COMERCIO_ID, comercio.id)
             intent.putExtra(COMERCIO_NOMBRE, comercio.nombre)
             intent.putExtra(COMERCIO_DIRECCION, comercio.direccion)
             intent.putExtra(COMERCIO_TELEFONO, comercio.telf)

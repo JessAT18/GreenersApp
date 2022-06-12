@@ -29,6 +29,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/include" />
 
+    <TextView
+        android:id="@+id/tv_cantidad_comercios"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="Cantidad de comercios: "
+        android:textSize="@dimen/_12ssp"
+
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginHorizontal="@dimen/_8sdp"
+
+        app:layout_constraintTop_toBottomOf="@id/svNombreComercio"
+
+        />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_comercios"
         android:layout_width="match_parent"
@@ -41,7 +56,7 @@
 
         android:background="@drawable/border_stroke_corner_background"
 
-        app:layout_constraintTop_toBottomOf="@+id/svNombreComercio"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cantidad_comercios"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:padding="@dimen/_1sdp"
+        android:padding="@dimen/_6sdp"
         android:background="@drawable/border_stroke_corner_background"
         >
         <androidx.cardview.widget.CardView
@@ -37,9 +37,8 @@
             android:layout_marginStart="@dimen/_8sdp"
 
             android:text="Nombre Comercio"
-            android:textSize="@dimen/_16ssp"
+            android:textSize="@dimen/_14ssp"
             android:textColor="@color/black"
-            android:textStyle="bold"
 
             app:layout_constraintTop_toTopOf="@id/cv_comercio"
             app:layout_constraintStart_toEndOf="@+id/cv_comercio"

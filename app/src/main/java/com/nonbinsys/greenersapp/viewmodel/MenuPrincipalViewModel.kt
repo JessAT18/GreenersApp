@@ -24,9 +24,6 @@ class MenuPrincipalViewModel: ViewModel() {
             ) {
                 response.body()?._embedded?.comercioList?.let { comercioList ->
                     comerciosLiveData.postValue(comercioList)
-//                    comercioList.forEach { comercio ->
-//                        Log.d("APIFunciona", comercio.toString())
-//                    }
                 }
             }
 
