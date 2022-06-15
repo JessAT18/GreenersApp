@@ -52,6 +52,7 @@ dependencies {
     def nav_version = "2.4.2"
     def lifecycle_version = "2.5.0-beta01"
     def lifecycle_ext_version = "2.2.0"
+    def roomVersion = "2.4.2"
 
     //endregion
 
@@ -85,8 +86,19 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
     // Coroutines
 //    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
-//    implementation group: 'androidx.lifecycle', name:'lifecycle-viewmodel-ktx', version: '2.0.0-alpha1'
+    implementation group: 'androidx.lifecycle', name:'lifecycle-viewmodel-ktx', version: '2.0.0-alpha1'
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+
+
+    //Room
+    implementation("androidx.room:room-runtime:$roomVersion")
+    annotationProcessor("androidx.room:room-compiler:$roomVersion")
+    //Kapt
+    apply plugin: 'kotlin-kapt'
+    // To use Kotlin annotation processing tool (kapt)
+    kapt("androidx.room:room-compiler:$roomVersion")
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation("androidx.room:room-ktx:$roomVersion")
 
     //endregion
 }

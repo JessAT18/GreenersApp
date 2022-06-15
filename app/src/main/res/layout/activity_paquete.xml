@@ -42,8 +42,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:layout_marginHorizontal="@dimen/_15sdp"
                 android:layout_marginTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_8sdp"
                 android:background="@drawable/border_stroke_corner_background"
 
                 app:layout_constraintTop_toTopOf="parent"
@@ -51,20 +52,22 @@
                 app:layout_constraintEnd_toEndOf="parent">
 
                 <TextView
+                    android:id="@+id/tv_nombre_paquete"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Descripcion"
-                    android:textSize="@dimen/_14ssp"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"/>
+                    android:text="Nombre"
+                    android:textSize="@dimen/_16ssp"
+                    android:textColor="@color/black"/>
 
                 <TextView
+                    android:id="@+id/tv_descripcion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Descripcion"
                     android:textSize="@dimen/_11ssp"
                     android:textColor="@color/black"/>
                 <TextView
+                    android:id="@+id/tv_precio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Precio"
@@ -72,6 +75,133 @@
                     android:textColor="@color/black"/>
             </LinearLayout>
 
+            <TextView
+                android:id="@+id/tv_unidades"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+
+                app:layout_constraintTop_toBottomOf="@id/ll_info_paquete"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                android:textSize="@dimen/_14ssp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+
+                android:layout_marginEnd="@dimen/_15sdp"
+
+                android:text="Unidades"/>
+            <RelativeLayout
+                android:id="@+id/rl_boton_cantidad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
+
+                android:gravity="center_horizontal"
+
+                android:background="@drawable/border_stroke_corner_background"
+
+                app:layout_constraintTop_toBottomOf="@id/tv_unidades"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_menos"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:onClick="onMenosClick"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    app:cornerRadius="@dimen/_40sdp"
+                    android:text="-"
+                    android:textSize="@dimen/_15ssp"
+                    android:textColor="@color/black"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_cantidad_paquetes"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="fill_parent"
+                    android:layout_alignTop="@+id/btn_menos"
+                    android:layout_alignBottom="@+id/btn_menos"
+                    android:layout_toEndOf="@+id/btn_menos"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_mas"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:onClick="onMasClick"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/tv_cantidad_paquetes"
+                    app:cornerRadius="@dimen/_40sdp"
+                    android:text="+"
+                    android:textSize="@dimen/_15ssp"
+                    android:textColor="@color/black"/>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_subtotal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:orientation="horizontal"
+
+                app:layout_constraintTop_toBottomOf="@id/rl_boton_cantidad"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_subtotal_titulo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+
+                    android:textSize="@dimen/_14ssp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+
+                    android:layout_marginEnd="@dimen/_15sdp"
+
+                    android:text="Subtotal"/>
+                <TextView
+                    android:id="@+id/tv_subtotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:layout_marginTop="@dimen/_8sdp"
+                    android:layout_marginStart="@dimen/_15sdp"
+
+                    android:text="Bs 1234"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    />
+
+            </LinearLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_agregar_paquete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Agregar a mi pedido"
+                android:textColor="@color/black"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:cornerRadius="@dimen/_10sdp"
+                app:layout_constraintTop_toBottomOf="@id/ll_subtotal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 

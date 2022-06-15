@@ -6,14 +6,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.nonbinsys.greenersapp.databinding.PaqueteItemBinding
 
-class PaquetesAdapter: RecyclerView.Adapter<PaquetesAdapter.PaqueteViewHolder>(){
+class PaquetesInventarioAdapter: RecyclerView.Adapter<PaquetesInventarioAdapter.PaqueteViewHolder>(){
     inner class PaqueteViewHolder(val binding: PaqueteItemBinding): RecyclerView.ViewHolder(binding.root)
 
-    private var paquetesList = ArrayList<Paquete>()
-    var onItemClick: ((Paquete) -> Unit)? = null
+    private var paquetesList = ArrayList<PaqueteInventario>()
+    var onItemClick: ((PaqueteInventario) -> Unit)? = null
 
-    fun setPaquetesList(paquetesList: List<Paquete>) {
-        this.paquetesList = paquetesList as ArrayList<Paquete>
+    fun setPaquetesList(paquetesList: List<PaqueteInventario>) {
+        this.paquetesList = paquetesList as ArrayList<PaqueteInventario>
         notifyDataSetChanged()
     }
 

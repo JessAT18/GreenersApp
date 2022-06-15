@@ -7,7 +7,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.bumptech.glide.Glide
-import com.nonbinsys.greenersapp.paquete.PaquetesAdapter
+import com.nonbinsys.greenersapp.paquete.PaquetesInventarioAdapter
 import com.nonbinsys.greenersapp.databinding.ActivityComercioBinding
 import com.nonbinsys.greenersapp.paquete.PaqueteActivity
 import com.nonbinsys.greenersapp.ui.activities.MenuPrincipalActivity
@@ -22,7 +22,16 @@ class ComercioActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityComercioBinding
     lateinit var comercioViewModel: ComercioViewModel
-    lateinit var paquetesAdapter: PaquetesAdapter
+    lateinit var paquetesInventarioAdapter: PaquetesInventarioAdapter
+
+    companion object{
+        const val PAQUETE_ID = "com.nonbinsys.greenersapp.comercio.paqueteId"
+        const val PAQUETE_NOMBRE = "com.nonbinsys.greenersapp.comercio.paqueteNombre"
+        const val PAQUETE_DESCRIPCION = "com.nonbinsys.greenersapp.comercio.paqueteDescripcion"
+        const val PAQUETE_LINK_PAQUETE = "com.nonbinsys.greenersapp.comercio.paqueteLinkPaquete"
+        const val PAQUETE_CODIGO = "com.nonbinsys.greenersapp.comercio.paqueteCodigo"
+        const val PAQUETE_PRECIO = "com.nonbinsys.greenersapp.comercio.paquetePrecio"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         supportActionBar?.hide()
@@ -43,24 +52,30 @@ class ComercioActivity : AppCompatActivity() {
     }
 
     private fun onPaqueteClick() {
-        paquetesAdapter.onItemClick = { paquete ->
+        paquetesInventarioAdapter.onItemClick = { paquete ->
             val intent = Intent(this, PaqueteActivity::class.java)
-            //PUT EXTRA
+
+            intent.putExtra(PAQUETE_ID, paquete.id)
+            intent.putExtra(PAQUETE_NOMBRE, paquete.nombre)
+            intent.putExtra(PAQUETE_DESCRIPCION, paquete.descripcion)
+            intent.putExtra(PAQUETE_LINK_PAQUETE, paquete.link_paquete)
+            intent.putExtra(PAQUETE_CODIGO, paquete.codigo)
+            intent.putExtra(PAQUETE_PRECIO, paquete.precio.toLong())
             startActivity(intent)
         }
     }
 
     private fun observerPaquetesLiveData() {
-        comercioViewModel.observePaquetesLiveData().observe(this, Observer { paquetes ->
-            paquetesAdapter.setPaquetesList(paquetes)
+        comercioViewModel.observePaquetesInventarioLiveData().observe(this, Observer { paquetes ->
+            paquetesInventarioAdapter.setPaquetesList(paquetes)
         })
     }
 
     private fun prepararPaquetesRecyclerView() {
-        paquetesAdapter = PaquetesAdapter()
+        paquetesInventarioAdapter = PaquetesInventarioAdapter()
         binding.rvPaquetes.apply {
             layoutManager = GridLayoutManager(context, 1, GridLayoutManager.VERTICAL, false)
-            adapter = paquetesAdapter
+            adapter = paquetesInventarioAdapter
         }
     }
 
