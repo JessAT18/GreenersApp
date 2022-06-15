@@ -3,10 +3,12 @@ package com.nonbinsys.greenersapp.comercio
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.bumptech.glide.Glide
+import com.nonbinsys.greenersapp.carrito.CarritoActivity
 import com.nonbinsys.greenersapp.paquete.PaquetesInventarioAdapter
 import com.nonbinsys.greenersapp.databinding.ActivityComercioBinding
 import com.nonbinsys.greenersapp.paquete.PaqueteActivity
@@ -47,8 +49,9 @@ class ComercioActivity : AppCompatActivity() {
         prepararPaquetesRecyclerView()
         comercioViewModel.encontrarPaquetesPorComercio(comercioId)
         observerPaquetesLiveData()
-        
+
         onPaqueteClick()
+        onCarritoClick()
     }
 
     private fun onPaqueteClick() {
@@ -63,6 +66,15 @@ class ComercioActivity : AppCompatActivity() {
             intent.putExtra(PAQUETE_PRECIO, paquete.precio.toLong())
             startActivity(intent)
         }
+    }
+
+    private fun onCarritoClick() {
+        binding.btnCarrito.setOnClickListener {
+
+            val intent = Intent(this, CarritoActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     private fun observerPaquetesLiveData() {

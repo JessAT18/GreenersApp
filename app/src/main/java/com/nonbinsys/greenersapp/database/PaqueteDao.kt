@@ -13,5 +13,5 @@ interface PaqueteDao {
     suspend fun delete (paquete: PaqueteCarrito)
 
     @Query("SELECT * FROM carritoInformation")
-    fun getAllPaquetes(): LiveData<PaqueteCarrito>
+    fun getAllPaquetes(): LiveData<List<PaqueteCarrito>>
 }

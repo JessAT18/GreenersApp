@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green_4"
+    tools:context=".carrito.CarritoActivity">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/fragment_toolbar" />
+
+    <TextView
+        android:id="@+id/tv_titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        android:padding="@dimen/_6sdp"
+
+        android:text="Paquetes en el carrito de compras"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="@dimen/_20sdp"
+
+        app:layout_constraintTop_toBottomOf="@id/include"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_carrito"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_300sdp"
+        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginHorizontal="@dimen/_8sdp"
+        android:background="@drawable/border_stroke_corner_background"
+        app:layout_constraintTop_toBottomOf="@id/tv_titulo"
+        android:scrollbars="vertical"/>
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_eliminar_carrito"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_40sdp"
+
+        android:text="Eliminar items en el carrito"
+        android:textColor="@color/black"
+
+        app:layout_constraintTop_toBottomOf="@id/rv_carrito"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
